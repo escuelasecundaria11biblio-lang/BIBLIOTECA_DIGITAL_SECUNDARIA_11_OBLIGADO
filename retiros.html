@@ -72,8 +72,10 @@
             width: 45%;
             margin-left: 48%;
             margin-top: -422px;
-            z-index: -1;
+            position: relative; /* ✅ agregado */
+            z-index: 10; /* ✅ opcional, o podés no ponerlo */
         }
+
 
         .ficha_libro {
             width: 40%;
@@ -418,7 +420,6 @@
         // Datos alumno
         const apellido = document.getElementById('alumnoApellido').value.trim();
         const nombre = document.getElementById('alumnoNombre').value.trim();
-        const legajo = document.getElementById('alumnoLegajo').value.trim();
         const curso = document.getElementById('alumnoCurso').value.trim();
         const turno = document.getElementById('alumnoTurno').value.trim();
         const dni = document.getElementById('alumnoDNI').value.trim();
@@ -428,7 +429,6 @@
 
         const datosAlumno = {
             "APELLIDO Y NOMBRES": apellidosNombres,
-            "LEGAJO": legajo,
             "CURSO": curso,
             "TURNO": turno,
             "N° DE DNI": dni,
@@ -540,7 +540,6 @@
 </head>
 <body>
 
-
 <script>
 (function(){
   const PASSWORD = "ROBLIGADO25";
@@ -588,4 +587,3 @@
 
 </body>
 </html>
-

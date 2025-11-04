@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Biblioteca Digital - Retiro docente</title>
+    <title>Biblioteca Digital - Retiros docentes</title>
 
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
@@ -72,8 +72,10 @@
             width: 45%;
             margin-left: 48%;
             margin-top: -422px;
-            z-index: -1;
+            position: relative; /* ✅ agregado */
+            z-index: 10; /* ✅ opcional, o podés no ponerlo */
         }
+
 
         .ficha_libro {
             width: 40%;
@@ -418,7 +420,6 @@
         // Datos alumno
         const apellido = document.getElementById('alumnoApellido').value.trim();
         const nombre = document.getElementById('alumnoNombre').value.trim();
-        const legajo = document.getElementById('alumnoLegajo').value.trim();
         const curso = document.getElementById('alumnoCurso').value.trim();
         const turno = document.getElementById('alumnoTurno').value.trim();
         const dni = document.getElementById('alumnoDNI').value.trim();
@@ -428,7 +429,6 @@
 
         const datosAlumno = {
             "APELLIDO Y NOMBRES": apellidosNombres,
-            "LEGAJO": legajo,
             "CURSO": curso,
             "TURNO": turno,
             "N° DE DNI": dni,
@@ -484,14 +484,12 @@
 
 
 
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página protegida</title>
+<title>Biblioteca Digital - Retiros</title>
 <style>
   /* Modal básico */
   #authModal {
@@ -541,9 +539,6 @@
 </style>
 </head>
 <body>
-
-<h1>Contenido de la página</h1>
-<p>Este contenido estará bloqueado hasta que ingreses la contraseña.</p>
 
 <script>
 (function(){
